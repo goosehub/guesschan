@@ -6,13 +6,13 @@ class Main extends CI_Controller {
 	public function index()
 	{
 		$data['boards'] = $this->get_list_of_boards();
-		$data['random'] = $this->get_random_4chan_post($data['boards']);
+		$data['random'] = $this->get_random_4chan_post(false, $data['boards']);
 		$this->load->view('header', $data);
 		$this->load->view('main', $data);
 		$this->load->view('footer', $data);
 	}
 
-	public function get_random_4chan_post($boards = false)
+	public function get_random_4chan_post($ajax = true, $boards = false)
 	{
 		$fourchan_base_url = 'https://a.4cdn.org/';
 		if (!$boards) {
@@ -41,6 +41,11 @@ class Main extends CI_Controller {
 		// Get a random post
 		$random = $this->get_post($board_page, $thread, $post_number);
 		$random['regular_full_url'] = 'https://boards.4chan.org/' . $board . '/thread/' . $random['thread_no'] . '#p' . $random['no'];
+		$random['board'] = $board;
+
+		if ($ajax) {
+			echo json_encode($random);
+		}
 
 		return $random;
 	}
@@ -59,7 +64,6 @@ class Main extends CI_Controller {
 
 		// If not a post with alphabet letters, go recurssive
 		if (!preg_match("/[a-z]/i", $random_post)) {
-			echo 'polo';
 			return $this->get_post();
 		}
 
