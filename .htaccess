@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteRule ^inc/.*$ index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# auth.php not allowed through http
+<Files "auth.php">
+Order Allow,Deny
+Deny from all
+</Files>
