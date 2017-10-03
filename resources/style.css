@@ -1,6 +1,10 @@
 body {
 	
 }
+.stuff_container {
+	width: 80%;
+	margin-left: 10%;
+}
 
 /* Greentext */
 .quote {
