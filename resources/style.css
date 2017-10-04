@@ -1,9 +1,71 @@
-body {
-	
-}
-.stuff_container {
+.main_container {
 	width: 80%;
 	margin-left: 10%;
+}
+.header_left{
+	display: inline-block;
+	width: 20%;
+}
+.header_center{
+	display: inline-block;
+	width: 50%;
+}
+.header_right{
+	display: inline-block;
+	width: 28%;
+}
+/* A little mobile stuff, I wish I had bootstrap right now */
+@media (max-device-width: 480px) {
+	.header_compartment {
+		width: 100%;
+		margin-bottom: 1em;
+		text-align: center;
+	}
+}
+.main_header_text {
+	display: inline;
+}
+/* Hide until first answer */
+.last_answer_parent {
+	display: none;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.last_answer_status, .last_answer_board, .last_answer_link {
+	margin-left: 1em;
+}
+.right_status {
+	color: green;
+}
+.wrong_status {
+	color: red;
+}
+.score_parent {
+	float: right;
+	font-size: 1.6em;
+	font-weight: bold;
+}
+.right_parent {
+	color: green;
+	margin-left: 1em;
+}
+.wrong_parent {
+	color: red;
+	margin-left: 1em;
+}
+.total_parent {
+	color: blue;
+	margin-left: 1em;
+}
+.clearfix {
+	clear: both;
+}
+.board_selection {
+	line-height: 1.4em;
+}
+.how_it_works {
+	max-width: 600px;
+	line-height: 1.6em;
 }
 
 /* Greentext */
