@@ -30,6 +30,10 @@ $(document).ready(function(){
 
 	// Submit answer
 	function answer_submitted(answer) {
+		// Stop if no input
+		if (!answer) {
+			return false;
+		}
 		console.log(answer);
 
 		// Clear input
