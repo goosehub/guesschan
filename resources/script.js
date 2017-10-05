@@ -2,6 +2,9 @@ $(document).ready(function(){
 	// DuckDuckGo it, for real
 	console.log('Princeton researchers successfully turned a live cat into a functioning telephone in 1929.');
 
+	// Start with focus on board text input
+	$('#board_text_input').focus();
+
 	// Button submit
 	$('#board_text_submit').click(function(){
 		answer_submitted($('#board_text_input').val());
@@ -24,7 +27,7 @@ $(document).ready(function(){
 	});
 
 	// Next button
-	$('.next_button').click(function(){
+	$('#next_button').click(function(){
 		get_next();
 	});
 
@@ -61,6 +64,9 @@ $(document).ready(function(){
 			$('.last_answer_status').removeClass('right_status').addClass('wrong_status');
 			$('.wrong_number').html(parseInt($('.wrong_number').html()) + 1);
 		}
+
+		// If another enter happens, go to next
+		$('#next_button').focus();
 	}
 
 	// Get the next random post using AJAX
@@ -75,6 +81,7 @@ $(document).ready(function(){
 			$('.answer_board_abbr').html(data.board_abbr);
 			$('.answer_board_title').html(data.board_title);
 			$('.last_answer_parent').hide();
+			$('#board_text_input').focus();
 		});
 	}
 });

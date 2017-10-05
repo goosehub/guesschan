@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<span class="last_answer_element that_was">That was </span>
 		<span class="last_answer_element last_answer_board"></span>
 		<a class="last_answer_element last_answer_link" target="_blank" href="#">View on 4chan</a>
-		<button class="next_button">Next</button>
+		<button id="next_button">Next</button>
 	</div>
 
 	<span class="answer_board_abbr" style="display: none"><?php echo $random['board_abbr'] ?></span>

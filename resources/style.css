@@ -27,7 +27,7 @@
 .last_answer_status, .that_was, .last_answer_link {
 	margin-left: 1em;
 }
-.next_button {
+#next_button {
 	display: block;
 	height: 2em;
 	width: 5em;
@@ -89,7 +89,7 @@
 		margin-bottom: 0.5em;
 		text-align: center;
 	}
-	.next_button {
+	#next_button {
 		margin: auto;
 		text-align: center;
 	}
