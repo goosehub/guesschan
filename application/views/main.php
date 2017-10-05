@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<p><span class="or_mobile">Or</span> Select the board you think this post came from</p>
 		<?php $i = 0; ?>
 		<?php foreach ($boards as $board) { ?>
-			<a href="#" class="board_selection" board="<?php echo $board['board']; ?>">/<?php echo $board['board']; ?>/ - <?php echo $board['title']; ?></a>
+			<a href="" class="board_selection" board="<?php echo $board['board']; ?>">/<?php echo $board['board']; ?>/ - <?php echo $board['title']; ?></a>
 			<br>
 			<?php $i++; ?>
 		<?php } ?>

@@ -15,8 +15,12 @@ $(document).ready(function(){
 	});
 
 	// Click submit
-	$('.board_selection').click(function(){
+	$('.board_selection').click(function(e){
 		answer_submitted($(this).attr('board'));
+		// Don't acutally follow the link
+		e.preventDefault()
+		e.stopPropagation()
+		return false;
 	});
 
 	// Next button
