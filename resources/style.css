@@ -14,25 +14,25 @@
 	display: inline-block;
 	width: 28%;
 }
-/* A little mobile stuff, I wish I had bootstrap right now */
-@media (max-device-width: 480px) {
-	.header_compartment {
-		width: 100%;
-		margin-bottom: 1em;
-		text-align: center;
-	}
-}
 .main_header_text {
 	display: inline;
 }
 /* Hide until first answer */
 .last_answer_parent {
 	display: none;
+	margin-top: 1em;
 	font-size: 1.2em;
 	font-weight: bold;
 }
-.last_answer_status, .last_answer_board, .last_answer_link {
+.last_answer_status, .that_was, .last_answer_link {
 	margin-left: 1em;
+}
+.next_button {
+	display: block;
+	height: 2em;
+	width: 5em;
+	margin-left: 1em;
+	margin-top: 1em;
 }
 .right_status {
 	color: green;
@@ -41,24 +41,30 @@
 	color: red;
 }
 .score_parent {
-	float: right;
 	font-size: 1.6em;
 	font-weight: bold;
 }
 .right_parent {
 	color: green;
 	margin-left: 1em;
+	float: left;
 }
 .wrong_parent {
 	color: red;
 	margin-left: 1em;
-}
-.total_parent {
-	color: blue;
-	margin-left: 1em;
+	float: right;
 }
 .clearfix {
 	clear: both;
+}
+.selection_left {
+	display: inline-block;
+	width: 49%;	
+}
+.selection_right {
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
 }
 .board_selection {
 	line-height: 1.4em;
@@ -66,6 +72,48 @@
 .how_it_works {
 	max-width: 600px;
 	line-height: 1.6em;
+}
+
+/* A little mobile stuff, I wish I had bootstrap right now */
+.or_mobile {
+	display: none;
+}
+@media (max-device-width: 600px) {
+	.main_container {
+		width: 96%;
+		margin-left: 2%;
+	}
+	/* Make compartments full width */
+	.header_compartment, .last_answer_element, .selection_compartment {
+		width: 100%;
+		margin-bottom: 0.5em;
+		text-align: center;
+	}
+	.next_button {
+		margin: auto;
+		text-align: center;
+	}
+	.last_answer_element {
+		display: block;
+	}
+	.last_answer_status, .that_was, .last_answer_link {
+		margin-left: 0;
+	}
+	/* The right selection compartment goes on top of mobile */
+	.selection_right {
+	    display: table-header-group;
+	}
+	.selection_left {
+		display: table-footer-group;
+	    float: none;
+	}
+	/* Switch or language for new order */
+	.or_desktop {
+		display: none;
+	}
+	.or_mobile {
+		display: inline;
+	}
 }
 
 /* Greentext */
