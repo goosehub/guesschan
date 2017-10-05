@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="main_container">
 	<header>
 		<div class="header_compartment header_left">
-			<h1 class="main_header_text">GuessChan?</h1>
+			<h1 class="main_header_text">GuessChan</h1>
 		</div>
 		<div class="header_compartment header_center">
 		</div>
@@ -12,7 +12,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="score_parent">
 				<span class="right_parent">Right: <span class="right_number">0</span></span>
 				<span class="wrong_parent">Wrong: <span class="wrong_number">0</span></span>
-				<!-- <span class="total_parent">Total: <span class="total_number">0</span></span> -->
 			</div>
 		</div>
 	</header>

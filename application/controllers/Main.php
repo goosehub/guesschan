@@ -7,8 +7,13 @@ class Main extends CI_Controller {
 
 	public function index()
 	{
+		// Get list of boards
 		$data['boards'] = $this->get_list_of_boards();
+
+		// Get a random post to start
 		$data['random'] = $this->get_random_4chan_post(false, $data['boards']);
+
+		// Load the views
 		$this->load->view('header', $data);
 		$this->load->view('main', $data);
 		$this->load->view('footer', $data);
@@ -45,10 +50,22 @@ class Main extends CI_Controller {
 
 	public function choose_board($boards = false)
 	{
+		// On page load, board list are already available in memory
 		if (!$boards) {
 			$boards = $this->get_list_of_boards();
 		}
+
+		// Get random board
 		$board = $boards[array_rand($boards, 1)];
+
+		/*
+		Officially, the longest war in history was between 
+		the Netherlands and the Isles of Scilly, 
+		which lasted from 1651 to 1986. 
+		There were no casualties.
+		*/
+
+		// Return board
 		return $board;
 	}
 
@@ -72,14 +89,17 @@ class Main extends CI_Controller {
 		// Convert to array one liner way
 		$board_page = json_decode(json_encode($board_page), true);
 
+		// Return the page
 		return $board_page;
 	}
 
 	public function get_post($board_page)
 	{
+		// Random thread and post number
 		$thread = rand(0, 9);
 		$post_number = rand(0, 3);
-		// If not valid, go recurssive
+
+		// If random post not valid, go recurssive
 		if (!isset($board_page['threads'][$thread]['posts'][$post_number]['com'])) {
 			return $this->get_post($board_page);
 		}
@@ -129,16 +149,19 @@ class Main extends CI_Controller {
 			$this->load->view('errors/page_not_found');
 			return false;
 		}
-		if ( !hash_equals(CRON_TOKEN, $token) ) {
+		if (!hash_equals(CRON_TOKEN, $token)) {
 			$this->load->view('errors/page_not_found');
 			return false;
 		}
+
+		// Loop through boards
 		$fourchan_base_url = 'https://a.4cdn.org/';
 		$boards = $this->get_list_of_boards();
 		foreach ($boards as $board) {
 			$board = $board['board'];
 			echo 'Downloading ' . $board . '<br>' . PHP_EOL;
-			// Get some random page
+
+			// Get some random page from this board
 			$page = rand(1, 5);
 			$full_url = $fourchan_base_url . $board . '/' . $page . '.json';
 			$raw_response = file_get_contents($full_url);
@@ -146,10 +169,13 @@ class Main extends CI_Controller {
 				echo 'file_get_contents dun goofed';
 				return false;
 			}
+
 			// Save json to file system
 			file_put_contents($this->json_folder_path . $board . '.json', $raw_response);
-			// Sleep for the API
-			usleep(1234);
+
+			// Sleep for the API, only allowed at most one request per second
+			// and let's use a prime number because prime numbers are awesome
+			usleep(1087);
 		}
 	}
 }

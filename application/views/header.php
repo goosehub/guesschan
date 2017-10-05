@@ -9,19 +9,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <title>GuessChan</title>
 
     <!-- Google please read this -->
-    <meta name="description" content="A site for guessing which 4chan board a post came from">
+    <meta name="description" content="A game where you guess which 4chan board a post came from">
 
     <!-- For Mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
 
     <!-- Thumbnail -->
-    <meta property="og:image" content="<?=base_url()?>resources/img/placeholder.jpg" />
+    <meta property="og:image" content="<?=base_url()?>resources/img/text_logo.png" />
 
     <!-- Link to Favicon -->
-    <link rel="icon" href="<?=base_url()?>resources/img/favicon.ico">
-
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link id="page_favicon" href="<?=base_url()?>resources/img/favicon.ico" rel="icon" type="image/x-icon">
 
     <link href="<?=base_url()?>resources/chan/burichan.css" rel="stylesheet" type="text/css">
     <!-- Blue -->
