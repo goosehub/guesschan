@@ -3,7 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Main extends CI_Controller {
 
-    protected $json_folder_path = 'application/json/';
+	protected $json_folder_path = 'application/json/';
+
+
+	function __construct() {
+		parent::__construct();
+
+		if (!is_dev()) {
+			force_ssl();
+		}
+	}
 
 	public function index()
 	{
