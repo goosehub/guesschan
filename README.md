@@ -7,7 +7,7 @@ No database is involved. 4chan data is cached in json files at `application/json
 
 These cache files are updated everytime application/cron.php is run.
 
-It's suggested you set up a cron for `application.cron.php`. `*/10 * * * *` should be more than enough.
+It's suggested you set up a cron for `application.cron.php`. `*/15 * * * *` should be more than enough.
 
 Update the auth_token in `application/config/constants.php` and `application/cron.php` when deploying to production.
 

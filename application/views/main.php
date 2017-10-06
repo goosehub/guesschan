@@ -63,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<hr>
 	<div class="how_it_works">
 		<strong>How it works</strong>
-		<p class="quote">>A random post from a random page of a random board is selected. All boards are choosen with equal likelyhood, meaning /b/ is as likely to pop up as /n/. Most post numbers (>>1234) are removed because they are too big a clue. This was built proudly with PHP using CodeIgniter 3 and the 4chan API. You can view and contribute to the code on <a target="_blank" href="https://github.com/goosehub/guesschan">GitHub</a>. [s4s] is nice board.</p>
+		<p class="quote">>A random post from a random page of a random board is selected. All boards are choosen with equal likelyhood, meaning /b/ is as likely to pop up as /n/. Most post numbers (>>1234) are removed because they are too big a clue. Tip: after submitting your answer, press enter again to continue to the next post. This was built proudly with PHP using CodeIgniter 3 and the 4chan API. You can view and contribute to the code on <a target="_blank" href="https://github.com/goosehub/guesschan">GitHub</a>. [s4s] is nice board.</p>
 	</div>
 	<br>
 </div>

@@ -37,7 +37,19 @@ $(document).ready(function(){
 		if (!answer) {
 			return false;
 		}
+
+		// To lowercase
+		answer = answer.toLowerCase();
+
+		// Remove /, such as /b/
+		answer = answer.replace('/','');
+		answer = answer.replace('/','');
+
+		// Answer we use
 		console.log(answer);
+
+		// Scroll to the top
+		$(window).scrollTop(0);
 
 		// Clear input
 		$('#board_text_input').val('');
@@ -75,12 +87,19 @@ $(document).ready(function(){
 		full_url = 'main/get_random_4chan_post';
 		$.getJSON(full_url, function(data) {
 			console.log(data);
+
+			// Scroll to the top
+			$(window).scrollTop(0);
+
+			// Update data
 			$('.the_post').html(data.post);
 			$('.post_link').attr('href', data.link);
 			$('.answer_link').html(data.link);
 			$('.answer_board_abbr').html(data.board_abbr);
 			$('.answer_board_title').html(data.board_title);
 			$('.last_answer_parent').hide();
+
+			// Focus back on the board text field
 			$('#board_text_input').focus();
 		});
 	}

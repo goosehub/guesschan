@@ -116,19 +116,19 @@ class Main extends CI_Controller {
 		// Get the random post
 		$random_post = $board_page['threads'][$thread]['posts'][$post_number]['com'];
 
+		// Remove post number only
+		$random_post = preg_replace('#<a.*?>.*?</a>#i', '', $random_post);
+
+		// Remove break tag from start
+		$random_post = preg_replace('/^<br>/', '', $random_post);
+
 		// If not a post with alphabet letters, go recurssive
 		if (!preg_match("/[a-z]/i", $random_post)) {
 			return $this->get_post();
 		}
 
-		// Remove post number only
-		$random_post = preg_replace('#<a.*?>.*?</a>#i', '', $random_post);
-
 		// Remove white space
 		$random_post = trim($random_post);
-
-		// Remove break tag from start
-		$random_post = preg_replace('/^<br>/', '', $random_post);
 
 		// Assign data
 		$post['post'] = $random_post;

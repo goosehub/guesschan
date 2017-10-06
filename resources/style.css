@@ -84,10 +84,13 @@
 		margin-left: 2%;
 	}
 	/* Make compartments full width */
-	.header_compartment, .last_answer_element, .selection_compartment {
+	.header_compartment, .last_answer_element {
 		width: 100%;
 		margin-bottom: 0.5em;
 		text-align: center;
+	}
+	.selection_compartment {
+		width: 100%;
 	}
 	#next_button {
 		margin: auto;
@@ -98,6 +101,10 @@
 	}
 	.last_answer_status, .that_was, .last_answer_link {
 		margin-left: 0;
+	}
+	/* More space on mobile */
+	.board_selection {
+		line-height: 2em;
 	}
 	/* The right selection compartment goes on top of mobile */
 	.selection_right {
