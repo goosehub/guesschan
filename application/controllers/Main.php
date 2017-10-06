@@ -119,6 +119,9 @@ class Main extends CI_Controller {
 		// Remove post number only
 		$random_post = preg_replace('#<a.*?>.*?</a>#i', '', $random_post);
 
+		// Remove white space
+		$random_post = trim($random_post);
+
 		// Remove break tag from start
 		$random_post = preg_replace('/^<br>/', '', $random_post);
 
@@ -126,9 +129,6 @@ class Main extends CI_Controller {
 		if (!preg_match("/[a-z]/i", $random_post)) {
 			return $this->get_post();
 		}
-
-		// Remove white space
-		$random_post = trim($random_post);
 
 		// Assign data
 		$post['post'] = $random_post;
