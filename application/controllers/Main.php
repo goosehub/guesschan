@@ -127,7 +127,7 @@ class Main extends CI_Controller {
 
 		// If not a post with alphabet letters, go recurssive
 		if (!preg_match("/[a-z]/i", $random_post)) {
-			return $this->get_post();
+			return $this->get_post($board_page);
 		}
 
 		// Assign data
