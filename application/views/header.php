@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
 
     <!-- Thumbnail -->
-    <meta property="og:image" content="<?=base_url()?>resources/img/text_logo.png" />
+    <meta property="og:image" content="<?=base_url()?>resources/img/text_logo_square.png" />
 
     <!-- Link to Favicon -->
     <link id="page_favicon" href="<?=base_url()?>resources/img/favicon.ico" rel="icon" type="image/x-icon">
